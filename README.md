@@ -1,4 +1,4 @@
-# ensure-param-exists
+# ensure_param_exists
 
 Provide an easy way to verify you're receiving the correct parameters in an API request.
 
@@ -17,7 +17,7 @@ class ArticleController
 end
 ```
 
-To keep our controllers DRY we created the `ensure-param-exists` gem which allows us to do the following:
+To keep our controllers DRY we created the `ensure_param_exists` gem which allows us to do the following:
 
 
 ```
@@ -33,16 +33,16 @@ Installation
 ----
 
 ```
-gem install ensure-param-exists
+gem install ensure_param_exists
 ```
 
 Usage
 ----
 
-Add ensure-param-exists to your gemfile:
+Add ensure_param_exists to your gemfile:
 
 ```
-gem 'ensure-param-exists'
+gem 'ensure_param_exists'
 ```
 
 Mixin the functionality into a controller (or base controller):
