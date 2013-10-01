@@ -70,7 +70,7 @@ end
 
 ## Copyright
 
-Copyright (c) 2013 PetroFeed. See LICENSE.txt for further details.
+Copyright (c) 2013 PetroFeed. See [LICENSE](https://github.com/PetroFeed/ensure_param_exists/blob/master/LICENSE) for further details.
 
 ---
 
