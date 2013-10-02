@@ -1,6 +1,6 @@
 # ensure_param_exists
 
-Provide an easy way to verify you're receiving the correct parameters in an API request.
+Provide an easy way to verify you're receiving the correct parameters in an API request in Rails.
 
 At PetroFeed we found that we were repeatedly writing the following code in our controllers:
 
