@@ -1,7 +1,7 @@
 require 'ensure_param_exists'
 
 class TestClass
-  extend EnsureParamExists
+  include EnsureParamExists
 end
 
 describe EnsureParamExists do

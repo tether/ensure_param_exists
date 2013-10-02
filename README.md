@@ -49,7 +49,7 @@ Mixin the functionality into a controller (or base controller):
 
 ```ruby
 class ArticleController
-  extend EnsureParamExists
+  include EnsureParamExists
 
   # ...
 end
@@ -59,7 +59,7 @@ Define any parameters that you'd like to make sure exist with `define_ensure_par
 
 ```ruby
 class ArticleController
-  extend EnsureParamExists
+  include EnsureParamExists
 
   define_ensure_param_exists_for :title, :author
 
