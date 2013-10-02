@@ -13,6 +13,14 @@ module EnsureParamExists
         end
       end
     end
+
+    def self.define_ensure_any_param_exists_for(*expected_params)
+      method_name = "ensure_#{expected_params.join("_or_")}_exists"
+      define_method(method_name) do
+        return unless expected_params.all? { |expected_param| params[expected_param.to_sym].blank? }
+        render json: { success: false, message: "missing #{expected_params.join(" or ")} parameter" }, status: 422
+      end
+    end
   end
 
 end

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'ensure_param_exists'
-  s.version     = '0.0.3'
+  s.version     = '0.0.4'
   s.date        = '2013-10-01'
   s.summary     = "Simple mixin to generate ensure_param_exist methods"
   s.description = "A quick mixin that lets you quickly define methods to ensure a parameter exists on a request"

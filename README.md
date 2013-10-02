@@ -68,6 +68,8 @@ class ArticleController
 end
 ```
 
+`define_ensure_any_param_exists_for` also exists and it checks for the existence of any of the parameters passed into it.
+
 ## Copyright
 
 Copyright (c) 2013 PetroFeed. See [LICENSE](https://github.com/PetroFeed/ensure_param_exists/blob/master/LICENSE) for further details.
