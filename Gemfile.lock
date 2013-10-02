@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ensure_param_exists (0.0.1)
+    ensure_param_exists (0.0.3)
       rails (~> 4.0.0)
 
 GEM
@@ -34,6 +34,7 @@ GEM
     arel (4.0.0)
     atomic (1.1.14)
     builder (3.1.4)
+    coderay (1.0.9)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     hike (1.2.3)
@@ -41,10 +42,15 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.2)
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.0)
     polyglot (0.3.3)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -70,6 +76,7 @@ GEM
     rspec-expectations (2.14.3)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.3)
+    slop (3.4.6)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -93,4 +100,6 @@ PLATFORMS
 
 DEPENDENCIES
   ensure_param_exists!
+  pry
   rspec
+  rspec-mocks
