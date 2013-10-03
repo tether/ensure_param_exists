@@ -14,12 +14,12 @@ describe EnsureParamExists do
 
   subject { TestClass.new }
 
-  context "ensure_param_exists" do
+  context "ensure_param" do
     it "sets a before_filter" do
       TestClass.should_receive(:before_filter).with(:ensure_p1_exists, {})
 
       class TestClass
-        ensure_param_exists :p1
+        ensure_param :p1
       end
     end
 
@@ -27,14 +27,14 @@ describe EnsureParamExists do
       TestClass.should_receive(:before_filter).with(:ensure_p1_exists, { only: [:show] })
 
       class TestClass
-        ensure_param_exists :p1, only: [:show]
+        ensure_param :p1, only: [:show]
       end
     end
 
     context "generated method logic" do
       it "accepts symbols" do
         class TestClass
-          ensure_param_exists :p1
+          ensure_param :p1
         end
 
         TestClass.method_defined?(:ensure_p1_exists).should be_true
@@ -43,7 +43,7 @@ describe EnsureParamExists do
       context "param is not set" do
         before :each do
           class TestClass
-            ensure_param_exists :p1
+            ensure_param :p1
           end
 
           subject.params = { p1: nil }
@@ -62,12 +62,12 @@ describe EnsureParamExists do
     end
   end
 
-  context "ensure_any_param_exists" do
+  context "ensure_any_params" do
     it "sets a before_filter" do
       TestClass.should_receive(:before_filter).with(:ensure_p1_or_p2_exists, {})
 
       class TestClass
-        ensure_any_param_exists :p1, :p2
+        ensure_any_params :p1, :p2
       end
     end
 
@@ -75,14 +75,14 @@ describe EnsureParamExists do
       TestClass.should_receive(:before_filter).with(:ensure_p1_or_p2_exists, { only: [:show] })
 
       class TestClass
-        ensure_any_param_exists :p1, :p2, only: [:show]
+        ensure_any_params :p1, :p2, only: [:show]
       end
     end
 
     context "generated method logic" do
       before :each do
         class TestClass
-          ensure_any_param_exists :p1, :p2
+          ensure_any_params :p1, :p2
         end
       end
 

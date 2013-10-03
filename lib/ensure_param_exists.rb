@@ -5,7 +5,7 @@ module EnsureParamExists
   extend ActiveSupport::Concern
 
   included do
-    def self.ensure_param_exists(expected_param, opts = {})
+    def self.ensure_param(expected_param, opts = {})
       method_name = "ensure_#{expected_param}_exists"
       define_method(method_name) do
         return unless params[expected_param.to_sym].blank?
@@ -15,7 +15,7 @@ module EnsureParamExists
       before_filter method_name.to_sym, opts
     end
 
-    def self.ensure_any_param_exists(*expected_params)
+    def self.ensure_any_params(*expected_params)
       opts = expected_params.last.kind_of?(Hash) ? expected_params.pop : {}
 
       method_name = "ensure_#{expected_params.join("_or_")}_exists"
