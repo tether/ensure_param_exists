@@ -54,19 +54,25 @@ class ArticleController
 end
 ```
 
-Define any parameters that you'd like check to make sure they exist with `ensure_param`. The method takes a symbol and any options that you'd pass to before_filter
+Define any parameters that you'd like check to make sure they exist with 
+`ensure_param`, `ensure_any_params`, or `ensure_all_params`. The singular method takes a 
+symbol, plurals take a symbol array, and any options at the end are passed to `before_filter`:
+
 
 ```ruby
 class ArticleController
   include EnsureParamExists
 
+  # Make sure :title exists
   ensure_param :title, only: [:show]
-  ensure_param :author, except: [:index, :create]
+
+  # Make sure title or author exists
+  ensure_any_params :title, :author, only: [:show]
+  
+  # Make sure title and author exists
+  ensure_all_params :title, :author, except: [:index]
 end
 ```
-
-`ensure_any_params` validates that at least one param exists (an **or** filter).
-`ensure_all_params` validates that at all params exist (an **and** filter).
 
 ## Copyright
 
