@@ -26,6 +26,17 @@ module EnsureParamExists
 
       before_filter method_name.to_sym, opts
     end
-  end
 
+    def self.ensure_all_params(*expected_params)
+      opts = expected_params.last.kind_of?(Hash) ? expected_params.pop : {}
+
+      method_name = "ensure_#{expected_params.join("_and_")}_exists"
+      define_method(method_name) do
+        return if expected_params.all? { |expected_param| params[expected_param.to_sym].present? }
+        render json: { success: false, message: "missing #{expected_params.join(" and ")} parameter" }, status: 422
+      end
+
+      before_filter method_name.to_sym, opts
+    end
+  end
 end

@@ -66,6 +66,7 @@ end
 ```
 
 `ensure_any_params` validates that at least one param exists (an **or** filter).
+`ensure_all_params` validates that at all params exist (an **and** filter).
 
 ## Copyright
 
