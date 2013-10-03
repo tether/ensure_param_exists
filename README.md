@@ -22,8 +22,7 @@ To keep our controllers DRY we created the `ensure_param_exists` gem which allow
 
 ```ruby
 class ArticleController
-  define_ensure_param_exists_for :title
-  before_filter :ensure_title_exists
+  ensure_param_exists :title
 end
 ```
 
@@ -55,20 +54,18 @@ class ArticleController
 end
 ```
 
-Define any parameters that you'd like to make sure exist with `define_ensure_param_exists_for`. The method takes a symbol or array.
+Define any parameters that you'd like check to make sure they exist with `ensure_param_exists`. The method takes a symbol and any options that you'd pass to before_filter
 
 ```ruby
 class ArticleController
   include EnsureParamExists
 
-  define_ensure_param_exists_for :title, :author
-
-  before_filter :ensure_title_exists
-  before_filter :ensure_author_exists
+  ensure_param_exists :title, only: [:show]
+  ensure_param_exists :author, except: [:index, :create]
 end
 ```
 
-`define_ensure_any_param_exists_for` also exists and it checks for the existence of any of the parameters passed into it.
+`ensure_any_param_exists` validates that at least one param exists (an **or** filter).
 
 ## Copyright
 

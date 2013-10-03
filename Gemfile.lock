@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ensure_param_exists (0.0.4)
+    ensure_param_exists (0.0.5)
       rails (~> 4.0.0)
 
 GEM
