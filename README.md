@@ -63,7 +63,7 @@ symbol, plurals take a symbol array, and any options at the end are passed to `b
 class ArticleController
   include EnsureParamExists
 
-  # Make sure :title exists
+  # Make sure title exists
   ensure_param :title, only: [:show]
 
   # Make sure title or author exists
