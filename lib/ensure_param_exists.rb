@@ -1,5 +1,3 @@
-require 'action_controller'
-
 module EnsureParamExists
   extend ActiveSupport::Concern
 
