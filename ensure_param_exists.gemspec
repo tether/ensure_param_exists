@@ -10,5 +10,5 @@ Gem::Specification.new do |s|
   s.homepage    = ''
   s.license     = 'MIT'
 
-  s.add_runtime_dependency 'rails', '~> 4.0.0'
+  s.add_runtime_dependency 'rails', '>= 4.0', '< 5.0'
 end
