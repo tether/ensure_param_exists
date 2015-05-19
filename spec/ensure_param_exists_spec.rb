@@ -1,3 +1,5 @@
+require 'action_controller'
+
 require 'ensure_param_exists'
 require 'pry'
 
